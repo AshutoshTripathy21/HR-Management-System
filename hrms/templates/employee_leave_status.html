@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Status</title>
+    <style>
+        .accepted { color: green; }
+        .rejected { color: red; }
+        .pending { color: blue; }
+    </style>
+</head>
+<body>
+    <h2>My Leave Requests</h2>
+    <table>
+        <tr>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Reason</th>
+            <th>Status</th>
+        </tr>
+        {% for request in leave_requests %}
+        <tr>
+            <td>{{ request.start_date }}</td>
+            <td>{{ request.end_date }}</td>
+            <td>{{ request.reason }}</td>
+            <td class="{{ request.status|lower }}">{{ request.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{% url 'employee_welcome' %}">Back to Home</a>
+</body>
+</html>

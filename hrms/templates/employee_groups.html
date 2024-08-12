@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Groups</title>
+</head>
+<body>
+    <h1>Your Groups</h1>
+    <ul>
+        {% for group in groups %}
+        <li>
+            <a href="{% url 'group_details' group.id %}">{{ group.task_name }}</a> - Deadline: {{ group.deadline }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

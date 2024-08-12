@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Group</title>
+</head>
+<body>
+    <h1>Create Group</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="task_name">Task Name:</label>
+        <input type="text" id="task_name" name="task_name" required><br><br>
+
+        <label for="task_details">Task Details:</label>
+        <textarea id="task_details" name="task_details" required></textarea><br><br>
+
+        <label for="deadline">Deadline:</label>
+        <input type="date" id="deadline" name="deadline" required><br><br>
+
+        <label for="leader_name">Leader Name:</label>
+        <input type="text" id="leader_name" name="leader_name" required><br><br>
+
+        <label for="leader_id">Leader ID:</label>
+        <input type="text" id="leader_id" name="leader_id" required><br><br>
+
+        <label for="members">Team Members (name, ID per line):</label><br>
+        <textarea id="members" name="members" rows="5" required></textarea><br><br>
+
+        <button type="submit">Create Group</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .welcome-container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome-container">
+        <h1>Welcome, {{ employee.name }}!</h1>
+        <ul>
+            <li><a href="{% url 'employee_detail_self' %}">View My Details</a></li>
+            <li><a href="{% url 'mark_attendance' %}">Mark Attendance</a></li>
+            <li><a href="{% url 'leave_request' %}">Request Leave</a></li>
+            <li><a href="{% url 'employee_leave_status' %}">My Leave Status</a></li>
+            <li><a href="{% url 'upload_document' %}">Upload Documents</a></li>
+            <li><a href="{% url 'employee_groups' %}">View My Groups</a></li>
+            <li><a href="{% url 'logoff' %}">Logoff</a></li>
+            <li><a href="{% url 'employee-logout' %}">Logout</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

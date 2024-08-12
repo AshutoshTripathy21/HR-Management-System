@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Request</title>
+</head>
+<body>
+    <h2>Leave Request Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" required><br><br>
+
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" required><br><br>
+
+        <label for="reason">Reason for Leave:</label><br>
+        <textarea name="reason" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Submit Request">
+    </form>
+
+    <a href="{% url 'employee_welcome' %}">Back to Home</a>
+</body>
+</html>

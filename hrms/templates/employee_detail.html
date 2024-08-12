@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .detail {
+            margin-bottom: 10px;
+        }
+
+        .detail label {
+            font-weight: bold;
+        }
+
+        .link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f4f4f4;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .link:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Employee Detail</h2>
+        <div class="detail">
+            <label>Employee ID:</label> {{ employee.employee_id }}
+        </div>
+        <div class="detail">
+            <label>Name:</label> {{ employee.name }}
+        </div>
+        <div class="detail">
+            <label>Position:</label> {{ employee.position }}
+        </div>
+        <div class="detail">
+            <label>Department:</label> {{ employee.department }}
+        </div>
+        <div class="detail">
+            <label>Email:</label> {{ employee.email }}
+        </div>
+        <div class="detail">
+            <label>Phone Number:</label> {{ employee.phone_number }}
+        </div>
+        <div class="detail">
+            <label>Date of Birth:</label> {{ employee.dob }}
+        </div>
+        <div class="detail">
+            <label>Leaves:</label> {{ employee.leaves }}
+        </div>
+        <h2>Attendance History</h2>
+
+        <a href="{% url 'attendance_history' %}?employee_id={{ employee.employee_id }}">View Attendance History</a>
+
+        <h2>Documents</h2>
+        <a class="link" href="{% url 'employee_documents' employee.employee_id %}">View Documents</a>
+        <a class="link" href="{% url 'update_employee' employee.employee_id %}">Update Employee</a>
+    </div>
+</body>
+
+</html>

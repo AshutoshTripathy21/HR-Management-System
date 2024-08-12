@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Logs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h2>Attendance Logs for {{ today }}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Worked Duration</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for attendance in attendances %}
+            <tr>
+                <td>{{ attendance.employee.employee_id }}</td>
+                <td>{{ attendance.employee.name }}</td>
+                <td>{{ attendance.status }}</td>
+                <td>
+                    {% if attendance.logoff_time %}
+                        {{ attendance.worked_duration }}
+                    {% else %}
+                        Not Logged Off
+                    {% endif %}
+                </td>
+                <td>{{ attendance.timestamp }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No records found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

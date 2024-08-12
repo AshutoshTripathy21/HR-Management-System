@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Requests</title>
+</head>
+<body>
+    <h2>Leave Requests</h2>
+    <table>
+        <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        {% for request in leave_requests %}
+        <tr>
+            <td>{{ request.employee.employee_id }}</td>
+            <td>{{ request.employee.name }}</td>
+            <td>{{ request.start_date }}</td>
+            <td>{{ request.end_date }}</td>
+            <td>{{ request.reason }}</td>
+            <td>{{ request.status }}</td>
+            <td>
+                {% if request.status == 'Pending' %}
+                <a href="{% url 'update_leave_status' request.id 'Accepted' %}">Accept</a>
+                <a href="{% url 'update_leave_status' request.id 'Rejected' %}">Reject</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

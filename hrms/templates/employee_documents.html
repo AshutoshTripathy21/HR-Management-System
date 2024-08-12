@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Documents</title>
+</head>
+<body>
+    <h2>Documents for {{ employee.name }}</h2>
+    <ul>
+    
+        {% for document in employee.documents.all %}
+        <tr>
+            <li>
+                {{ document.document.name }} - 
+                <a href="{% url 'download_document' document.id %}">Download</a>
+            </li>
+        </tr>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'employee_list' %}">Back to Employee List</a>
+</body>
+</html>

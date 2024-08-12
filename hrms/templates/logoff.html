@@ -1,0 +1,8 @@
+<!-- logoff.html -->
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Log Off</button>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+</form>

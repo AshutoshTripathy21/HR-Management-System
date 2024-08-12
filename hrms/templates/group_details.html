@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group Details</title>
+</head>
+<body>
+    <h1>{{ group.task_name }}</h1>
+    <p><strong>Task Details:</strong> {{ group.task_details }}</p>
+    <p><strong>Deadline:</strong> {{ group.deadline }}</p>
+    <p><strong>Leader:</strong> {{ group.leader_name }} ({{ group.leader_id }})</p>
+
+    <h3>Team Members:</h3>
+    <ul>
+        {% for member in group.members.all %}
+        <li>{{ member.name }} ({{ member.employee_id }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
