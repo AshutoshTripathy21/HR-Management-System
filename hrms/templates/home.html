@@ -1,41 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>HR Home</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f8f9fa;
-        }
-        .home-container {
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
-        h2 {
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
+{% extends 'hr_base.html' %}
+{% load static %}
+{% block title %}HR Dashboard Home{% endblock %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% block content %}
     <div class="home-container">
-        <h2>Welcome to the HR Dashboard</h2>
         <p>You are successfully logged in.</p>
-        <ul>
-            <li><a href="{% url 'add_employee' %}">Add Employee</a></li>
-            <li><a href="{% url 'employee_list' %}">Employee List</a></li>
-            <li><a href="{% url 'attendance_logs' %}">Attendance Logs</a></li>
-            <li><a href="{% url 'hr_leave_requests' %}">Manage Leave Requests</a></li>
-            <li><a href="{% url 'create_group' %}">Assign Task</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-        </ul>
+        <h2>Welcome to the HR Dashboard</h2>
+        
     </div>
-</body>
-</html>
+{% endblock %}

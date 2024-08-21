@@ -4,20 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Documents</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h2>Documents for {{ employee.name }}</h2>
-    <ul>
-    
-        {% for document in employee.documents.all %}
-        <tr>
+    <div class="container">
+        <h2>Documents for {{ employee.name }}</h2>
+        <ul>
+            {% for document in employee.documents.all %}
             <li>
-                {{ document.document.name }} - 
+                {{ document.document.name }} 
                 <a href="{% url 'download_document' document.id %}">Download</a>
             </li>
-        </tr>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'employee_list' %}">Back to Employee List</a>
+            {% endfor %}
+        </ul>
+        <a class="back-link" href="{% url 'employee_list' %}">Back to Employee List</a>
+    </div>
 </body>
 </html>

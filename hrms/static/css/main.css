@@ -1,0 +1,10 @@
+.home-container {
+    text-align: center; /* Center align text if desired */
+    margin: 40px; /* Add margin to ensure space around the container */
+}
+
+h2 {
+    font-size: 24px; /* Adjust font size if needed */
+    color: #333; /* Ensure color is visible */
+    margin-bottom: 10px; /* Add margin for spacing */
+}
