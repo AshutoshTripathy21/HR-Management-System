@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^mllcrrnp1_u$mvs^ly#wjdis(dc2e=gh07*dq@w^j=3rx(ac2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -129,6 +129,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.office365.com'  # e.g., smtp.gmail.com for Gmail
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'mail-id'  # Your email address
-EMAIL_HOST_PASSWORD = 'password'  # Your email password
-DEFAULT_FROM_EMAIL = 'mail-id'
+EMAIL_HOST_USER = 'exampleflask365@outlook.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'Flask2024'  # Your email password
+DEFAULT_FROM_EMAIL = 'exampleflask365@outlook.com'
